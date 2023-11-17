@@ -14,9 +14,6 @@ import com.ibm.cna.telecom.model.Connection;
 import com.ibm.cna.telecom.repository.ConnectionRepository;
 import com.ibm.cna.telecom.service.ConnectionService;
 
-
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class TelecomApplicationTests {
@@ -31,7 +28,7 @@ class TelecomApplicationTests {
 
 	@Test
 	public void saveConnectionTest() {
-		Connection connection = new Connection(101, "1234","Fiber","Ram","Active");
+		Connection connection = new Connection();
 		when(connectionRepository.save(connection)).thenReturn(connection);
 		assertEquals(connection, connService.saveConnection(connection));
 	}
